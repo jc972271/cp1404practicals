@@ -22,16 +22,17 @@ def main():
             evaluation = evaluate_score(score)
             print(evaluation)
         elif choice == 'S':
-            print_stars(score)
+            print_string(score)
         else:
             print("Invalid choice")
+        print_string(50, "-")
         print(MENU)
         choice = input(">>> ").upper()
     print("Goodbye")
 
 
-def print_stars(amount):
-    print("*" * amount)
+def print_string(amount, string = "*"):
+    print(string * amount)
 
 
 def get_score():
