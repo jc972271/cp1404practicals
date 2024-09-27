@@ -25,4 +25,4 @@ I will stop skim reading the questions and ensure I meet all the requirements
 
 ## What are you doing really well for practicals in this subject?
 
-
+Learning the naming conventions in python and applying them
