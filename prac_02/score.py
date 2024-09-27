@@ -6,7 +6,7 @@ from random import randint
 
 
 def main():
-    """ Evaluate a random and given score"""
+    """Evaluate a random and given score."""
     score = float(input("Enter score: "))
     evaluation = evaluate_score(score)
     print(evaluation)
@@ -18,7 +18,7 @@ def main():
 
 
 def evaluate_score(score):
-    """ Evaluate a received score """
+    """Evaluate a received score."""
     if score < 0 or score > 100:
         evaluation = "Invalid score"
     elif score >= 90:
