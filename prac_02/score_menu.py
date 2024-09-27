@@ -13,8 +13,7 @@ MENU = """
 
 def main():
     score = get_score()
-    print(MENU)
-    choice = input(">>> ").upper()
+    choice = menu()
     while choice != 'Q':
         if choice == 'G':
             score = get_score()
@@ -25,10 +24,16 @@ def main():
             print_string(score)
         else:
             print("Invalid choice")
-        print_string(50, "-")
-        print(MENU)
-        choice = input(">>> ").upper()
+        choice = menu()
     print("Goodbye")
+
+
+def menu():
+    print_string(50, "-")
+    print(MENU)
+    choice = input(">>> ").upper()
+    print_string(50, "-")
+    return choice
 
 
 def print_string(amount, string = "*"):
