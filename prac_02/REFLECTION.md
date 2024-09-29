@@ -13,7 +13,7 @@ Tuesday, I do half in the morning 9 to 10 and the second half from 1 to 2
 
 ## What are you doing well in the subject so far that you will keep doing?
 
-Completing the practicals and quizzes before the due dates 
+Learning to use the shortcuts in pycharm 
 
 ## What do you need to stop or change in your work for this subject overall so far?
 
