@@ -38,7 +38,7 @@ def menu():
     return choice
 
 
-def print_string(amount, string = "*"):
+def print_string(amount, string="*"):
     """Print a multiplied string."""
     print(string * amount)
 
@@ -55,13 +55,13 @@ def get_score():
 def evaluate_score(score):
     """Evaluate a score."""
     if score < 0 or score > 100:
-        evaluation = "Invalid score"
+        return "Invalid score"
     elif score >= 90:
-        evaluation = "Excellent"
+        return "Excellent"
     elif score >= 50:
-        evaluation = "Passable"
+        return "Passable"
     else:
-        evaluation = "Bad"
-    return evaluation
+        return "Bad"
+
 
 main()
