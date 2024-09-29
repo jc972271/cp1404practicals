@@ -5,6 +5,7 @@ Code for inputting password
 
 
 def main():
+    """Get a password and return an obfuscate result."""
     password_length = 8
 
     password = get_password(password_length)
@@ -13,6 +14,7 @@ def main():
 
 
 def get_password(password_length):
+    """Get user password."""
     password = input('Enter your password: ')
     while len(password) < password_length:
         print(f"Password must be longer then {password_length} characters")
@@ -21,6 +23,7 @@ def get_password(password_length):
 
 
 def obfuscate_password(password):
+    """Return a string of stars equal in length to an inputted string."""
     print("*" * len(password))
 
 
