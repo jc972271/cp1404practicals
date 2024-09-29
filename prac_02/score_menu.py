@@ -12,6 +12,7 @@ MENU = """
 
 
 def main():
+    """Manage the calling of a user selected menu option."""
     score = get_score()
     choice = menu()
     while choice != 'Q':
@@ -29,6 +30,7 @@ def main():
 
 
 def menu():
+    """Print the menu layout."""
     print_string(50, "-")
     print(MENU)
     choice = input(">>> ").upper()
@@ -37,10 +39,12 @@ def menu():
 
 
 def print_string(amount, string = "*"):
+    """Print a multiplied string."""
     print(string * amount)
 
 
 def get_score():
+    """Get score input from a user."""
     score = int(input("Enter score: "))
     while score < 0 or score > 100:
         print("Invalid score")
@@ -49,6 +53,7 @@ def get_score():
 
 
 def evaluate_score(score):
+    """Evaluate a score."""
     if score < 0 or score > 100:
         evaluation = "Invalid score"
     elif score >= 90:
