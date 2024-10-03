@@ -18,3 +18,6 @@ print(random.uniform(2.5, 5.5))  # line 3
 # results line 3: 5.32437746362797 3.1218985484358894 3.96767839217453 3.6122054513709996 4.494323135682122 4.89270969927782 4.200454283302818 3.965650967716723 3.2844179767678607 4.237308424363726
 # smallest: 2.5
 # largest: 5.5 however depending on the rounding used this could change
+
+#random number between 1 and 100
+print(random.randint(1, 100))
