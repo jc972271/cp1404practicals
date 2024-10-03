@@ -15,7 +15,7 @@ MIN_PRICE = 0.01
 MAX_PRICE = 1000.0
 INITIAL_PRICE = 10.0
 
-number_of_days = 1
+number_of_days = 0
 
 price = INITIAL_PRICE
 print(f"The initial price is: ${price:,.2f}")
