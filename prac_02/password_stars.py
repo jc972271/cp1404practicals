@@ -23,7 +23,7 @@ def get_password(password_length):
 
 
 def obfuscate_password(password):
-    """Return a string of stars equal in length to an inputted string."""
+    """Return a string of stars equal in length to an inputted string. """
     print("*" * len(password))
 
 
