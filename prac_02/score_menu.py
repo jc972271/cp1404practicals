@@ -56,12 +56,9 @@ def evaluate_score(score):
     """Evaluate a score."""
     if score < 0 or score > 100:
         return "Invalid score"
-    elif score >= 90:
+    if score >= 90:
         return "Excellent"
-    elif score >= 50:
+    if score >= 50:
         return "Passable"
-    else:
-        return "Bad"
-
-
+    return "Bad"
 main()
