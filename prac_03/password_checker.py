@@ -1,6 +1,6 @@
 """
 CP1404 - Practical 3
-Password checker "skeleton" code to help you get started
+Code to check Password against requirements
 """
 
 MIN_LENGTH = 2

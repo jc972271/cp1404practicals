@@ -1,3 +1,9 @@
+"""
+CC2511 - Practical
+Code to test various functions from the random module.
+"""
+
+
 import random
 
 print(random.randint(5, 20))  # line 1

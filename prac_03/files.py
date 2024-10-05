@@ -1,6 +1,6 @@
 """
 CP1404 - Practical 3
-various file interactions
+Code for testing various file interactions
 """
 
 name = input("Name: ")

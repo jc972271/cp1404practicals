@@ -1,6 +1,6 @@
 """
 CP1404- Practical 3
-Fill in the TODOs to complete the task
+Code to varify if input is a valid integer
 """
 
 is_finished = False
