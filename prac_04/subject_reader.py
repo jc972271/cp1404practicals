@@ -31,8 +31,9 @@ def load_data():
 
 
 def print_subject_details(data):
-    for thing in data:
-        print(f"{thing[0]} is taught by {thing[1]} and has {thing[2]} students")
+    """Takes in a list of lists and prints the data within"""
+    for things in data:
+        print(f"{things[0]} is taught by {things[1]} and has {things[2]} students")
 
 
 main()
