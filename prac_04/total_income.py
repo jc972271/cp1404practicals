@@ -15,13 +15,11 @@ def main():
 
     print_report(incomes)
 
-
 def print_report(incomes):
+    """Prints an income report consisting of the month income and the running total"""
     print("\nIncome Report\n-------------")
     total = 0
     for month, income in enumerate(incomes, 1):
         total += income
         print("Month {:2} - Income: ${:10.2f} Total: ${:10.2f}".format(month, income, total))
-
-
 main()
