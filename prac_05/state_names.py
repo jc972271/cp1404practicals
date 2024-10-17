@@ -1,7 +1,6 @@
 """
 CP1404 - Practical 5
 State names in a dictionary
-File needs reformatting
 """
 
 CODE_TO_NAME = {"QLD": "Queensland",
