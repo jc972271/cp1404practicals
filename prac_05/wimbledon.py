@@ -6,35 +6,36 @@ Wimbledon data-reading, processing and displaying
 import csv
 
 FILENAME = "wimbledon.csv"
+INDEX_COUNTRY = 1
+INDEX_PLAYER = 2
 
 
 def main():
-    wimbledon_records = open_file(FILENAME)
-    player_to_wins = get_player_to_wins(wimbledon_records)
-    print_wimbledon_champions(player_to_wins)
+    records = get_records(FILENAME)
+    player_to_wins, countries = format_records(records)
+    display_results(player_to_wins, countries)
 
-    print()
-    print("These 12 countries have won Wimbledon:")
-    print(", ".join(sorted(set([country[1] for country in wimbledon_records]))))
-
-
-def print_wimbledon_champions(player_to_wins):
+def display_results(player_to_wins, countries):
     print("Wimbledon Champions:")
     for player in player_to_wins:
         print(f"{player} {player_to_wins[player]}")
 
+    print()
+    print(f"These {len(countries)} countries have won Wimbledon:")
+    print(", ".join(sorted(countries)))
 
-def get_player_to_wins(wimbledon):
+
+def format_records(records):
     player_to_wins = {}
-    for line in wimbledon:
-        if line[2] in player_to_wins:
-            player_to_wins[line[2]] += 1
+    countries = set([country[INDEX_COUNTRY] for country in records])
+    for record in records:
+        if record[INDEX_PLAYER] in player_to_wins:
+            player_to_wins[record[INDEX_PLAYER]] += 1
         else:
-            player_to_wins[line[2]] = 1
-    return player_to_wins
+            player_to_wins[record[INDEX_PLAYER]] = 1
+    return player_to_wins, countries
 
-
-def open_file(filename):
+def get_records(filename):
     with open(filename, "r", encoding="utf-8-sig") as in_file:
         in_file.readline()
         return list(csv.reader(in_file))
