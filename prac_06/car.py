@@ -14,7 +14,7 @@ class Car:
         self._odometer = 0
 
     def __str__(self):
-        """Formats the output into f string"""
+        """Formats the output into f string."""
         return f"{self.name}, fuel={self.fuel}, odometer={self._odometer}"
 
     def add_fuel(self, amount):
