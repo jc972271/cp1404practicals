@@ -1,6 +1,8 @@
 """
 CP1404 Practical 6 -
 Using the Language class
+Estimate: 7 minutes
+Actually: 6 minutes
 """
 
 from programming_language import ProgrammingLanguage

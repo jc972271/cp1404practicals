@@ -1,6 +1,8 @@
 """
 CP1404 Practical 6 -
 Make list of user guitars
+Estimate: 10 minutes
+Actually: 12 minutes
 """
 from guitar import Guitar
 
