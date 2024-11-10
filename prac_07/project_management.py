@@ -7,6 +7,7 @@ Actual:
 
 import datetime
 from project import Project
+from operator import itemgetter
 
 MENU = """- (L)oad projects  
 - (S)ave projects  
@@ -37,6 +38,10 @@ def main():
         elif choice == "F":
             date_string = input("Date (d/m/yyyy): ")  # e.g., "30/9/2022"
             date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+            date_filtered_projects = [project for project in projects if project.date_filter(date)]
+            for project in date_filtered_projects:
+                print(project)
+
         elif choice == "A":
             pass
         elif choice == "U":
@@ -52,10 +57,10 @@ def display_projects(projects):
     not_complete = [project for project in projects if not project.is_complete()]
     complete = [project for project in projects if project.is_complete()]
     print("Incomplete projects: ")
-    for project in not_complete:
+    for project in sorted(not_complete):
         print(f"\t{project}")
     print("Complete projects: ")
-    for project in complete:
+    for project in sorted(complete):
         print(f"\t{project}")
 
 
