@@ -2,7 +2,7 @@
 CP1404 - Practical 7
 Project Manager
 Estimate: 40 minutes
-Actual:
+Actual: 2 hours
 """
 
 import datetime
