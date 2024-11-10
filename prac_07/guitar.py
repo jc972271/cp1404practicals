@@ -11,6 +11,9 @@ class Guitar:
         """Formats the output into f string."""
         return f"{self.name} ({self.year}) : ${self.cost:.2f}"
 
+    def __lt__(self, other):
+        return self.year < other.year
+
     def get_age(self, current_year):
         """Gets the age in years of the guitar."""
         return current_year - self.year

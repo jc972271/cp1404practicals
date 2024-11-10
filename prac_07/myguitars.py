@@ -8,15 +8,30 @@ from guitar import Guitar
 
 FILENAME = "guitars.csv"
 
-guitars = []
 
-infile = open(FILENAME, "r")
-csv = csv.reader(infile)
+def main():
+    guitars = []
+    infile = open(FILENAME, "r")
+    csv_guitars = csv.reader(infile)
 
-for line in csv:
-    guitars.append(Guitar(line[0], int(line[1]), float(line[2])))
-infile.close()
+    for line in csv_guitars:
+        guitars.append(Guitar(line[0], int(line[1]), float(line[2])))
+    infile.close()
 
-for guitar in guitars:
-    print(guitar)
+    guitars = add_guitars(guitars)
 
+    for guitar in sorted(guitars):
+        print(guitar)
+
+
+def add_guitars(guitars):
+    name = input("Guitar's Name: ")
+    while name != "":
+        year = int(input("Year: "))
+        cost = float(input("Cost: $"))
+        guitars.append(Guitar(name, year, cost))
+        print(f"{name} ({year}) : ${cost:.2f} added.")
+        name = input("Guitar's Name: ")
+    return guitars
+
+main()
