@@ -36,20 +36,42 @@ def main():
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
-            date_string = input("Date (d/m/yyyy): ")  # e.g., "30/9/2022"
-            date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
-            date_filtered_projects = [project for project in projects if project.date_filter(date)]
-            for project in date_filtered_projects:
-                print(project)
-
+            filter_by_date(projects)
         elif choice == "A":
-            pass
+            add_project(projects)
         elif choice == "U":
             pass
         else:
             print("Invalid choice")
         print(MENU)
         choice = input(">>> ").upper()
+
+
+def add_project(projects):
+    """Allows user to add new project"""
+    is_done = False
+    while not is_done:
+        try:
+            name = input("Project Name: ")
+            date_string = input("Date (d/m/yyyy): ")  # e.g., "30/9/2022"
+            date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+            priority = int(input("Project Priority: "))
+            cost = float(input("Project Cost: "))
+            is_done = True
+        except ValueError:
+            print("Please enter the correct data type")
+    new_project = Project(name, date, priority, cost, 0)  # while loop ensures value
+    print(f"Added: {new_project}")
+    projects.append(new_project)
+
+
+def filter_by_date(projects):
+    """Filters projects by a user chosen date."""
+    date_string = input("Date (d/m/yyyy): ")  # e.g., "30/9/2022"
+    date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    date_filtered_projects = [project for project in projects if project.date_filter(date)]
+    for project in date_filtered_projects:
+        print(project)
 
 
 def display_projects(projects):
