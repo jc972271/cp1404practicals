@@ -10,6 +10,7 @@ FILENAME = "guitars.csv"
 
 
 def main():
+    """Initialise the program."""
     guitars = []
     infile = open(FILENAME, "r")
     csv_guitars = csv.reader(infile)
@@ -23,8 +24,11 @@ def main():
     for guitar in sorted(guitars):
         print(guitar)
 
+    save_guitars(guitars)
+
 
 def add_guitars(guitars):
+    """Get a guitar from user and append it to guitars."""
     name = input("Guitar's Name: ")
     while name != "":
         year = int(input("Year: "))
@@ -33,5 +37,14 @@ def add_guitars(guitars):
         print(f"{name} ({year}) : ${cost:.2f} added.")
         name = input("Guitar's Name: ")
     return guitars
+
+
+def save_guitars(guitars):
+    """Will save the guitars to a file."""
+    outfile = open(FILENAME, "w")
+    for guitar in guitars:
+        print(repr(guitar), file=outfile)
+    outfile.close()
+
 
 main()

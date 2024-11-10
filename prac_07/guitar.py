@@ -7,11 +7,16 @@ class Guitar:
         self.year = year
         self.cost = cost
 
+    def __repr__(self):
+        """Formats output into a CSV line"""
+        return f"{self.name},{self.year},{self.cost:.2f}"
+
     def __str__(self):
         """Formats the output into f string."""
         return f"{self.name} ({self.year}) : ${self.cost:.2f}"
 
     def __lt__(self, other):
+        """Evaluates which guitar is younger"""
         return self.year < other.year
 
     def get_age(self, current_year):
