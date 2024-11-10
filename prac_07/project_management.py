@@ -26,7 +26,6 @@ def main():
     print(f"{len(projects)} projects loaded from {DEFAULT_FILE}")
     print(MENU)
     choice = input(">>> ").upper()
-    print(choice)
     while choice != "Q":
         if choice == "L":
             print("Load Project")
@@ -48,7 +47,10 @@ def main():
             print("Invalid choice")
         print(MENU)
         choice = input(">>> ").upper()
-
+    if input(f"Would you like to save changes to {DEFAULT_FILE}? (Y/N): ").upper() == "Y":
+        save_project(projects)
+        print(f"{len(projects)} projects saved to {DEFAULT_FILE}")
+    print("Thank you for using our project management software")
 
 def update_project(projects):
     """Allows user to update the completion and priority of a project."""
@@ -134,7 +136,8 @@ def save_project(projects, filename=DEFAULT_FILE):
     outfile = open(filename, "w")
     print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=outfile)
     for project in projects:
-        print(repr(project))
+        project.start_date = project.start_date.strftime("%d/%m/%Y")
+        print(repr(project), file=outfile)
     outfile.close()
 
 
