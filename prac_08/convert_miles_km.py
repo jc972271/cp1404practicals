@@ -26,6 +26,13 @@ class ConvertMilesToKilometersApp(App):
         result = value * MILES_TO_KM
         self.output_kilometers = str(result)
 
+    def handle_increment(self, increment):
+        value = float(self.root.ids.input_miles.text)
+        result = value + increment
+        self.root.ids.input_miles.text = str(result)
+
+
+
 
 
 ConvertMilesToKilometersApp().run()
