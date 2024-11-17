@@ -22,16 +22,19 @@ class ConvertMilesToKilometersApp(App):
         return self.root
 
     def calculate_result(self):
+        """Converts miles into kilometers."""
         value = self.validate_miles()
         result = value * MILES_TO_KM
         self.output_kilometers = str(result)
 
     def handle_increment(self, increment):
+        """Increments the miles by a given amount."""
         value = self.validate_miles()
         result = value + increment
         self.root.ids.input_miles.text = str(result)
 
     def validate_miles(self):
+        """Checks if user input can be converted to float"""
         try:
             value = float(self.root.ids.input_miles.text)
             return value
