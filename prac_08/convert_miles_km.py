@@ -4,12 +4,13 @@ Kivy GUI program to convert miles to kilometers
 Liam Whiting, IT@JCU
 Started 17/11/2024
 """
-from Demos.security.sspi.validate_password import validate
+
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 
 MILES_TO_KM = 1.609344
+
 
 class ConvertMilesToKilometersApp(App):
     """ ConvertMilesToKilometersApp is a Kivy App for converting miles to kilometers"""
@@ -40,10 +41,6 @@ class ConvertMilesToKilometersApp(App):
             return value
         except ValueError:
             return 0
-
-
-
-
 
 
 ConvertMilesToKilometersApp().run()
