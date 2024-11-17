@@ -4,6 +4,7 @@ BoxLayout:
         orientation: 'horizontal'
         TextInput:
             text: ''
+            id: input_miles
             font_size: 48
         BoxLayout:
             orientation: 'vertical'
@@ -17,7 +18,8 @@ BoxLayout:
     Button:
         text: 'Convert'
         font_size: 48
+        on_press: app.calculate_result()
     Label:
-        text: 'Kilometers'
+        text: app.output_kilometers
         font_size: 48
         color: (1, 1, 0, 1)
