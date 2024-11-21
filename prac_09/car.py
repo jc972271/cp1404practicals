@@ -1,4 +1,4 @@
-"""CP1404 - Car class example."""
+"""CP1404 - Car class."""
 
 class Car:
     """Represent a Car object."""
