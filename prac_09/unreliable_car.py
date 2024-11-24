@@ -16,7 +16,7 @@ class UnreliableCar(Car):
         self.reliability = reliability
 
     def drive(self, distance):
-        """Drive like parent Car but check the car starts"""
+        """Drive like parent Car but check whether the car starts."""
         if randint(0,100) < self.reliability:
             distance_driven = super().drive(distance)
         else:
