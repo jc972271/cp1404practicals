@@ -7,6 +7,7 @@ MENU = """q)uit, c)hoose taxi, d)rive"""
 
 def main():
     chosen_taxi = None
+    total_bill = 0.0
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
 
     print("Let's Drive!")
@@ -15,13 +16,24 @@ def main():
     while choice != "Q":
         if choice == "C":
             chosen_taxi = choose_tax(taxis)
-            print(type(chosen_taxi))
         elif choice == "D":
-            pass
+            if chosen_taxi is None:
+                print("You need to choose a taxi before you can drive")
+            else:
+                total_bill += drive_taxi(chosen_taxi)
         else:
             print("Invalid choice")
+        print(f"Bill to date: ${total_bill:.2f}")
         print(MENU)
         choice = input(">>> ").upper()
+
+def drive_taxi(chosen_taxi):
+    distance = int(input("Drive how far (km)? "))
+    chosen_taxi.drive(distance)
+    fare = chosen_taxi.get_fare()
+    print(f"Your {chosen_taxi.name} trip cost you ${fare:.2f}")
+    return fare
+
 
 def choose_tax(taxis):
     print("Taxis available:")
